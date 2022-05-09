@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: #242333;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pickMovie {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pickMovie label {
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.categories {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.categories ul {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.categories ul li {
+  list-style-type: none;
+  display: flex;
+}
+
+.seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.screen {
+  background-color: #fff;
+  height: 80px;
+  width: 230px;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.selected {
+  background-color: #6feaf6;
+}
+
+.occupied {
+  background-color: #fff;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.row .seat:nth-child(2) {
+  margin-right: 2rem;
+}
+
+.row .seat:nth-child(6) {
+  margin-right: 2rem;
+}
+
+.screen-container {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  margin-top: 1.5rem;
+  color: white;
+}
