@@ -3,6 +3,7 @@ const seats = document.querySelectorAll('.row .seat:not(.occupied)');
 let total = document.getElementById('total');
 let count = document.getElementById('count');
 const movieSelect = document.getElementById('movieSelect');
+const clearSeats = document.getElementById('clear-seats');
 
 populateUI();
 
@@ -17,7 +18,6 @@ function updateSelectedCountandTotal() {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
 
   const seatIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
-  console.log(seatIndex);
 
   localStorage.setItem('selectedSeats', JSON.stringify(seatIndex));
 
@@ -28,7 +28,6 @@ function updateSelectedCountandTotal() {
 
 function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
-  console.log(selectedSeats);
 
   if (selectedSeats !== null && selectedSeats.length > 0) {
     seats.forEach((seat, index) => {
@@ -58,6 +57,19 @@ container.addEventListener('click', (e) => {
     e.target.classList.toggle('selected');
     updateSelectedCountandTotal();
   }
+});
+
+clearSeats.addEventListener('click', () => {
+  const cleanSeats = [];
+  let selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+
+  if (selectedSeats.length > 0) {
+    localStorage.setItem('selectedSeats', cleanSeats);
+    seats.forEach((seat) => {
+      seat.classList.remove('selected');
+    });
+  }
+  updateSelectedCountandTotal();
 });
 
 updateSelectedCountandTotal();
