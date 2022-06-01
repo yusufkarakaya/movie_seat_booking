@@ -22,6 +22,13 @@ body {
   margin-bottom: 2rem;
 }
 
+.pickMovie select {
+  padding: 5px 15px 5px 15px;
+  border-color: #fff;
+  border: 0;
+  border-radius: 5px;
+}
+
 .pickMovie label {
   color: white;
   display: flex;
@@ -47,6 +54,28 @@ body {
 }
 
 .seat {
+  background-color: #444451;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.seat:hover {
+  cursor: pointer;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.occupied:hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.seat-showcase {
   background-color: #444451;
   height: 12px;
   width: 15px;
@@ -98,9 +127,14 @@ body {
 .screen-container {
   display: flex;
   justify-content: center;
+  perspective: 1000px;
 }
 
 .text {
   margin-top: 1.5rem;
   color: white;
+}
+
+.text p span {
+  color: #6feaf6;
 }
